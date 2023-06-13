@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root{
+    --clr-primary-400:hsl(225, 100%, 94%);
+    --clr-primary-700:hsl(245, 75%, 52%);
+    --clr-neutral-200:hsl(225, 100%, 98%);
+    --clr-neutral-500:hsl(224, 23%, 55%);--clr-neutral-700:hsl(223, 47%, 23%);
+
+    --fw-bold:900;
+    --fw-semibold:700;
+    --fw-regular:500;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/*General Styling*/
+
+body{
+font-family: 'Red Hat Display', sans-serif;
+background-color: var(--clr-primary-400);
+background-image: url(./images/pattern-background-mobile.svg);
+background-repeat: no-repeat;
+background-size: contain;
+font-size: 16px;
+min-height: 100vh;
+  display: grid;
+  place-content: center;
+  margin-top: 8vh;
+  margin-bottom: 5vh;
+}
+
+/*Main Styling*/
+.order{
+  background: white;
+  border-radius: 1rem;
+   box-shadow: 0 15px 25px 0 hsla(245, 75%, 52%, .11);
+  overflow: hidden;
+  display: grid;
+  max-width: 27.5rem;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  
+}
+
+.order__details{
+  text-align: center;
+}
+
+.order__title{
+  color: var(--clr-neutral-700);
+  font-weight: var(--fw-bold);
+  font-size: 1.4rem;
+  padding: 1.3em 0 .8em 0;
+}
+
+.order__description{
+  color: var(--clr-neutral-500);
+  font-size: .95rem;
+  padding: 0 2.1em 1.4em 2.1em;
+}
+
+/*Plan box*/
+.annual-plan{
+  display: flex;
+  background: var(--clr-neutral-200);
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.5em 1.5em 1.5em;
+  padding: 1em;
+  border-radius: .5rem;
+}
+
+.plan-box-left{
+  display:flex;
+}
+
+.annual-plan__details{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1.2em;
+    gap: .2em;
+    text-align: left;
+    font-size: .7rem;
+}
+
+.annual-plan__details h2{
+  color: var(--clr-neutral-700);
+  font-size: .9rem;
+}
+
+.annual-plan__details p{
+  color: var(--clr-neutral-500);
+  font-size: .8rem;
+}
+
+.plan-box-right a{
+  color: var(--clr-primary-700);
+  font-weight: var(--fw-semibold);
+  font-size: .8rem;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.annual-plan a:hover{
+  opacity: .8;
+}
+
+/*Buttons*/
+
+.button-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: .65em;
+  margin-bottom: 1.5em;
+}
+
+.btn {
+  all: unset;
+  display: block;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: .95rem;
+  font-weight: 700;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+  padding: 1em;
+}
+
+.btn:focus {
+  /* Provide a fallback style for browsers
+     that don't support :focus-visible */
+  outline: 3px dashed var(--clr-neutral-blue-300);
+}
+
+.btn:focus:not(:focus-visible) {
+  /* Remove the focus indicator on mouse-focus for browsers
+     that do support :focus-visible */
+  outline: none;
+}
+
+.btn:focus-visible {
+  /* for browsers that do support :focus-visible */
+  outline: 3px dashed var(--clr-neutral-blue-300);
+}
+
+.proceed-button{
+  background: var(--clr-primary-700);
+    color: white;
+    box-shadow: 0 15px 20px 0 hsla(245, 75%, 52%, .25);
+    opacity: 1;
+    transition: all .2s ease;
+}
+
+.proceed-button :hover{
+  opacity: .8;
+}
+
+.cancel-button{
+  color: var(--clr-neutral-500);
+    transition: color .2s ease;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 450px) {
+
+  body {
+    background: url(images/pattern-background-desktop.svg), var(--clr-primary-400);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+    .order__title{
+      font-size: 1.7rem;
+        padding-top: 1.7em;
+        padding-bottom: .7em;
+    }
+
+    .order__description{
+      font-size: 1.05rem;
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+
+.annual-plan{
+  margin: 0 3em 3em 3em;
+  padding: 1.5em;
+}
+
+.annual-plan__icon{
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.annual-plan__details h2 {
+  font-size: 1.05rem;
+}
+
+.annual-plan__details p {
+  font-size: 1.05rem;
+}
+    .plan-box-right a {
+      font-size: .9rem;
+    }
+    
+         .btn {
+           margin-left: 3em;
+           margin-right: 3em;
+         }
+    
+}
+
